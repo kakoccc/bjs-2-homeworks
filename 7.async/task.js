@@ -20,9 +20,9 @@ class AlarmClock {
 
     getCurrentFormattedTime(){
         let data = new Date();
-        let hour = data.getHours();
-        let minutes = data.getMinutes();
-        return hour + ':'+ (minutes < 10 ? '0' + minutes : minutes);
+        let hour = String(data.getHours()).padStart(2, '0');
+        let minutes = String(data.getMinutes()).padStart(2, '0');
+        return `${hour}:${minutes}`;
     };
 
     start(){
